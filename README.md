@@ -4,6 +4,10 @@
 
 ![GateAuth Preview](./public/screenshots/gateauth.PNG)
 
+<p align="center">
+  <img src="./public/screenshots/gateauth.PNG" alt="GateAuth Authentication UI Kit" width="100%" />
+</p>
+
 ---
 
 ## Overview
@@ -18,7 +22,9 @@ GateAuth is not a backend — it is a UI kit. All form submissions simulate asyn
 
 ## Screenshot
 
-![GateAuth Authentication Flows](./public/screenshots/gateauth.PNG)
+<p align="center">
+  <img src="./public/screenshots/gateauth.PNG" alt="GateAuth — Login, Signup, OTP Verification, Password Reset flows" width="100%" />
+</p>
 
 ---
 
