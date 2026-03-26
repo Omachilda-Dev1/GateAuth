@@ -1,12 +1,5 @@
 # GateAuth — Every door, elegantly handled.
 
-> A production-grade Authentication UI Kit built with Next.js 16, TypeScript, and Tailwind CSS v4.
-
-![GateAuth Preview](./public/screenshots/gateauth.PNG)
-
-<p align="center">
-  <img src="./public/screenshots/gateauth.PNG" alt="GateAuth Authentication UI Kit" width="100%" />
-</p>
 
 ---
 
@@ -101,102 +94,7 @@ gateauth/
 
 ---
 
-## Getting Started
 
-### Prerequisites
-
-- Node.js 18+
-- npm / yarn / pnpm
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/Omachilda-Dev1/GateAuth.git
-cd GateAuth/gateauth
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) — you'll be redirected to `/auth` which shows the interactive flow navigator.
-
-### Build for Production
-
-```bash
-npm run build
-npm run start
-```
-
----
-
-## Auth Flows
-
-| Route | Description |
-|---|---|
-| `/auth` | Demo navigator — links to all flows |
-| `/auth/login` | Email + password, social login, remember me |
-| `/auth/signup` | Registration with password strength meter |
-| `/auth/forgot-password` | Email submission + check-inbox success state |
-| `/auth/verify-email` | 6-digit OTP input (demo code: `123456`) |
-| `/auth/reset-password?token=valid` | New password form |
-| `/auth/reset-password` | Token-expired error state |
-
----
-
-## Design System
-
-GateAuth uses a custom teal color palette defined as CSS variables in `globals.css` via Tailwind v4's `@theme` block:
-
-| Token | Hex | Usage |
-|---|---|---|
-| `brand-500` | `#3D827E` | Primary CTA, active states |
-| `brand-600` | `#2D605C` | Hover states |
-| `brand-200` | `#BADEDC` | Borders, backgrounds |
-| `error` | `#DC2626` | Validation errors |
-| `success` | `#16A34A` | Success states |
-| `warning` | `#D97706` | Warning states (expired token) |
-
----
-
-## Connecting a Backend
-
-Every form's `onSubmit` handler contains a simulated `setTimeout` delay. Replace it with your real API call:
-
-```ts
-// Example: swap the mock for a real call
-const onSubmit = async (data: LoginFormData) => {
-  setLoading(true);
-  try {
-    await signIn("credentials", { email: data.email, password: data.password });
-    router.push("/dashboard");
-  } catch {
-    setFormError("Invalid credentials.");
-  } finally {
-    setLoading(false);
-  }
-};
-```
-
-Compatible with: **NextAuth.js**, **Supabase Auth**, **Auth0**, **Clerk**, **Firebase Auth**, or any custom REST/GraphQL API.
-
----
-
-## Deploy on Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Omachilda-Dev1/GateAuth)
-
-Or via CLI:
-
-```bash
-npm install -g vercel
-vercel --prod
-```
-
----
 
 ## License
 
