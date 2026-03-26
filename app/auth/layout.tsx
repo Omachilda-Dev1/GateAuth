@@ -1,17 +1,19 @@
+import { ShieldCheck, Zap, BadgeCheck, Globe } from "lucide-react";
 import { GateAuthLogo } from "@/components/auth/GateAuthLogo";
 
 const features = [
-  { icon: "🔐", text: "Bank-grade AES-256 encryption" },
-  { icon: "⚡", text: "Sub-100ms authentication latency" },
-  { icon: "🛡️", text: "SOC 2 Type II compliant" },
-  { icon: "🌍", text: "99.99% uptime SLA" },
+  { icon: ShieldCheck, text: "Bank-grade AES-256 encryption" },
+  { icon: Zap,         text: "Sub-100ms authentication latency" },
+  { icon: BadgeCheck,  text: "SOC 2 Type II compliant" },
+  { icon: Globe,       text: "99.99% uptime SLA" },
 ];
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-dvh flex flex-col lg:flex-row">
       {/* ── Left panel: branding (hidden on mobile) ── */}
-      <aside className="hidden lg:flex lg:w-[480px] xl:w-[520px] flex-shrink-0 flex-col justify-between p-10 xl:p-14 relative overflow-hidden"
+      <aside
+        className="hidden lg:flex lg:w-[480px] xl:w-[520px] flex-shrink-0 flex-col justify-between p-10 xl:p-14 relative overflow-hidden"
         style={{ background: "linear-gradient(160deg, #1C3D3B 0%, #2D605C 45%, #3D827E 100%)" }}
       >
         {/* Decorative circles */}
@@ -40,13 +42,15 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
           </div>
 
           <ul className="space-y-3">
-            {features.map((f) => (
-              <li key={f.text} className="flex items-center gap-3">
-                <span className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-sm"
-                  style={{ background: "rgba(186,222,220,0.15)" }}>
-                  {f.icon}
+            {features.map(({ icon: Icon, text }) => (
+              <li key={text} className="flex items-center gap-3">
+                <span
+                  className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center"
+                  style={{ background: "rgba(186,222,220,0.15)" }}
+                >
+                  <Icon size={16} style={{ color: "#81C4C0" }} strokeWidth={1.8} />
                 </span>
-                <span className="text-sm font-medium" style={{ color: "#BADEDC" }}>{f.text}</span>
+                <span className="text-sm font-medium" style={{ color: "#BADEDC" }}>{text}</span>
               </li>
             ))}
           </ul>
@@ -61,11 +65,15 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
       </aside>
 
       {/* ── Right panel: form ── */}
-      <main className="flex-1 flex flex-col min-h-dvh lg:min-h-0 overflow-y-auto"
-        style={{ background: "#F4FAFA" }}>
+      <main
+        className="flex-1 flex flex-col min-h-dvh lg:min-h-0 overflow-y-auto"
+        style={{ background: "#F4FAFA" }}
+      >
         {/* Mobile header */}
-        <header className="lg:hidden flex items-center justify-between px-5 py-4 border-b"
-          style={{ borderColor: "#E4ECEC", background: "#FFFFFF" }}>
+        <header
+          className="lg:hidden flex items-center justify-between px-5 py-4 border-b"
+          style={{ borderColor: "#E4ECEC", background: "#FFFFFF" }}
+        >
           <GateAuthLogo iconSize={28} />
         </header>
 
