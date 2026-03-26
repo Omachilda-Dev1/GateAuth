@@ -18,7 +18,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "GateAuth — Every door, elegantly handled.",
   description: "Secure, production-grade authentication for modern applications.",
-  icons: { icon: "/favicon.ico" },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: "/favicon.svg",
+  },
 };
 
 export const viewport: Viewport = {

@@ -1,0 +1,13 @@
+<svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="40" height="40" rx="10" fill="#3D827E"/>
+  <!-- Arch / gate top -->
+  <path d="M10 28 L10 18 Q10 10 20 10 Q30 10 30 18 L30 28" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <!-- Left pillar -->
+  <rect x="10" y="22" width="5" height="8" rx="1" fill="white"/>
+  <!-- Right pillar -->
+  <rect x="25" y="22" width="5" height="8" rx="1" fill="white"/>
+  <!-- Keyhole circle -->
+  <circle cx="20" cy="21" r="2.5" fill="rgba(255,255,255,0.9)"/>
+  <!-- Keyhole stem -->
+  <rect x="19" y="22" width="2" height="3.5" rx="1" fill="rgba(255,255,255,0.9)"/>
+</svg>
